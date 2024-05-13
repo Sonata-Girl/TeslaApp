@@ -11,6 +11,7 @@
 		673EB1AC2BF2A6F10030B294 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673EB1AB2BF2A6F10030B294 /* ContentView.swift */; };
 		673EB1AE2BF2A6F30030B294 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 673EB1AD2BF2A6F30030B294 /* Assets.xcassets */; };
 		673EB1B12BF2A6F30030B294 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 673EB1B02BF2A6F30030B294 /* Preview Assets.xcassets */; };
+		673EB1B92BF2B3E40030B294 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 673EB1B82BF2B3E40030B294 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		673EB1AB2BF2A6F10030B294 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		673EB1AD2BF2A6F30030B294 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		673EB1B02BF2A6F30030B294 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		673EB1B82BF2B3E40030B294 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 				673EB1A92BF2A6F10030B294 /* TeslaAppApp.swift */,
 				673EB1AB2BF2A6F10030B294 /* ContentView.swift */,
 				673EB1AD2BF2A6F30030B294 /* Assets.xcassets */,
+				673EB1B82BF2B3E40030B294 /* Colors.xcassets */,
 				673EB1AF2BF2A6F30030B294 /* Preview Content */,
 			);
 			path = TeslaApp;
@@ -125,6 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				673EB1B92BF2B3E40030B294 /* Colors.xcassets in Resources */,
 				673EB1B12BF2A6F30030B294 /* Preview Assets.xcassets in Resources */,
 				673EB1AE2BF2A6F30030B294 /* Assets.xcassets in Resources */,
 			);
