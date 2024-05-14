@@ -12,6 +12,14 @@
 		673EB1AE2BF2A6F30030B294 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 673EB1AD2BF2A6F30030B294 /* Assets.xcassets */; };
 		673EB1B12BF2A6F30030B294 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 673EB1B02BF2A6F30030B294 /* Preview Assets.xcassets */; };
 		673EB1B92BF2B3E40030B294 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 673EB1B82BF2B3E40030B294 /* Colors.xcassets */; };
+		673EB1BB2BF396190030B294 /* ConvexButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673EB1BA2BF396180030B294 /* ConvexButton.swift */; };
+		673EB1BD2BF3A06D0030B294 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673EB1BC2BF3A06D0030B294 /* WelcomeView.swift */; };
+		673EB1C02BF3A0AD0030B294 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673EB1BF2BF3A0AD0030B294 /* View+Extension.swift */; };
+		673EB1C22BF3CD850030B294 /* TeslaLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673EB1C12BF3CD850030B294 /* TeslaLogo.swift */; };
+		673EB1C42BF3D2F10030B294 /* TeslaLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673EB1C32BF3D2F10030B294 /* TeslaLogoView.swift */; };
+		673EB1C62BF3E2680030B294 /* CarSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673EB1C52BF3E2680030B294 /* CarSettingsView.swift */; };
+		673EB1C82BF3E9790030B294 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673EB1C72BF3E9790030B294 /* CircularProgressView.swift */; };
+		673EB1CA2BF40C050030B294 /* ClimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673EB1C92BF40C050030B294 /* ClimateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +29,14 @@
 		673EB1AD2BF2A6F30030B294 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		673EB1B02BF2A6F30030B294 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		673EB1B82BF2B3E40030B294 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		673EB1BA2BF396180030B294 /* ConvexButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvexButton.swift; sourceTree = "<group>"; };
+		673EB1BC2BF3A06D0030B294 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		673EB1BF2BF3A0AD0030B294 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		673EB1C12BF3CD850030B294 /* TeslaLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeslaLogo.swift; sourceTree = "<group>"; };
+		673EB1C32BF3D2F10030B294 /* TeslaLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeslaLogoView.swift; sourceTree = "<group>"; };
+		673EB1C52BF3E2680030B294 /* CarSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSettingsView.swift; sourceTree = "<group>"; };
+		673EB1C72BF3E9790030B294 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		673EB1C92BF40C050030B294 /* ClimateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +71,13 @@
 			children = (
 				673EB1A92BF2A6F10030B294 /* TeslaAppApp.swift */,
 				673EB1AB2BF2A6F10030B294 /* ContentView.swift */,
+				673EB1BA2BF396180030B294 /* ConvexButton.swift */,
+				673EB1BE2BF3A0980030B294 /* Helpers */,
+				673EB1BC2BF3A06D0030B294 /* WelcomeView.swift */,
+				673EB1C32BF3D2F10030B294 /* TeslaLogoView.swift */,
+				673EB1C52BF3E2680030B294 /* CarSettingsView.swift */,
+				673EB1C72BF3E9790030B294 /* CircularProgressView.swift */,
+				673EB1C92BF40C050030B294 /* ClimateView.swift */,
 				673EB1AD2BF2A6F30030B294 /* Assets.xcassets */,
 				673EB1B82BF2B3E40030B294 /* Colors.xcassets */,
 				673EB1AF2BF2A6F30030B294 /* Preview Content */,
@@ -68,6 +91,15 @@
 				673EB1B02BF2A6F30030B294 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		673EB1BE2BF3A0980030B294 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				673EB1BF2BF3A0AD0030B294 /* View+Extension.swift */,
+				673EB1C12BF3CD850030B294 /* TeslaLogo.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +174,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				673EB1AC2BF2A6F10030B294 /* ContentView.swift in Sources */,
+				673EB1C42BF3D2F10030B294 /* TeslaLogoView.swift in Sources */,
+				673EB1CA2BF40C050030B294 /* ClimateView.swift in Sources */,
+				673EB1C62BF3E2680030B294 /* CarSettingsView.swift in Sources */,
 				673EB1AA2BF2A6F10030B294 /* TeslaAppApp.swift in Sources */,
+				673EB1C22BF3CD850030B294 /* TeslaLogo.swift in Sources */,
+				673EB1C02BF3A0AD0030B294 /* View+Extension.swift in Sources */,
+				673EB1BB2BF396190030B294 /* ConvexButton.swift in Sources */,
+				673EB1BD2BF3A06D0030B294 /* WelcomeView.swift in Sources */,
+				673EB1C82BF3E9790030B294 /* CircularProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

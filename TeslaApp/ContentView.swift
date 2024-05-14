@@ -11,8 +11,11 @@ struct ContentView: View {
     @GestureState private var gestureOffset = CGSize.zero
     @State private var currentMenuOffsetY: CGFloat = 0.0
 
+
+    
+
     var body: some View {
-        WelcomeView()
+        ClimateView()
     }
 }
 
@@ -20,69 +23,135 @@ struct ContentView: View {
     ContentView()
 }
 
-
-struct WelcomeView: View {
+struct ClimateView: View {
 
     enum Constants {
-        static let darkCarImageName = "darkCar"
-        static let lightCarImageName = "lightCar"
-        static let settingsImageName = "settings"
+        static let arrowLeftImageName = "chevron.left"
+        static let settingsImageName = "settingsIcon"
+        static let climateText = "CLIMATE"
+        static let verdanaFont = "Verdana"
+        static let acImage = "cold"
+        static let fanImage = "wind"
+        static let heatImage = "water"
+        static let autoImage = "auto"
     }
+
+    @State private var progress = 0
 
     var body: some View {
-//        ZStack {
-            LinearGradient(colors: [.appBlack, .black, .black, .black, .appBlack], startPoint: .top, endPoint: .bottom)
-                .ignoresSafeArea()
-                .overlay(alignment: .topTrailing) {
-                    Button {
-
-                    } label: {
-                        Image(Constants.settingsImageName)
-                    }
+        LinearGradient(colors: [.appBlack, .black, .appBlack], startPoint: .top, endPoint: .bottom)
+            .ignoresSafeArea()
+            .overlay(alignment: .topLeading) {
+                VStack {
+                    getHeader()
+                    Spacer()
+                        .frame(height: 100)
+                    CircularProgressView(progress: $progress)
                 }
-                .overlay(alignment: .center) {
-                    Image(Constants.darkCarImageName)
-                }
-//        }
+            }
+            .overlay(alignment: .center) {
+
+            }
+            .overlay(alignment: .bottom) {
+                DisclosureGroup(
+                    content: {
+                        HStack {
+                            Text("Ac")
+                                .foregroundStyle(.gray)
+                            ConvexImageButton(buttonImageName: Constants.acImage, withShadows: false)
+                            Slider(value: Binding(
+                                get: { Double(self.progress) },
+                                set: { newValue in
+                                    self.progress = Int(newValue)
+                                }
+                            ), in: 0...15, step: 1) {
+                                Text(String(progress))
+                            }
+                            .padding(.vertical)
+                            .tint(.appBlue)
+                            .onAppear {
+                                UISlider.appearance().setThumbImage(UIImage(named: "sliderIcon"), for: .normal)
+                            }
+                        }
+                        .padding(.zero)
+                        HStack {
+                            Text("Fan")
+                                .foregroundStyle(.gray)
+                            ConvexImageButton(buttonImageName: Constants.fanImage, withShadows: false)
+                            Slider(value: Binding(
+                                get: { Double(self.progress) },
+                                set: { newValue in
+                                    self.progress = Int(newValue)
+                                }
+                            ), in: 0...15, step: 1) {
+                                Text(String(progress))
+                            }
+                            .padding(.vertical)
+                            .tint(.appBlue)
+                        }
+                        .padding(.zero)
+                        HStack {
+                            Text("Heat")
+                                .foregroundStyle(.gray)
+                            ConvexImageButton(buttonImageName: Constants.acImage, withShadows: false)
+                            Slider(value: Binding(
+                                get: { Double(self.progress) },
+                                set: { newValue in
+                                    self.progress = Int(newValue)
+                                }
+                            ), in: 0...15, step: 1) {
+                                Text(String(progress))
+                            }
+                            .padding(.vertical)
+                            .tint(.appBlue)
+                        }
+                        .padding(.zero)
+                        HStack {
+                            Text("Auto")
+                                .foregroundStyle(.gray)
+                            ConvexImageButton(buttonImageName: Constants.autoImage, withShadows: false)
+                            Slider(value: Binding(
+                                get: { Double(self.progress) },
+                                set: { newValue in
+                                    self.progress = Int(newValue)
+                                }
+                            ), in: 0...15, step: 1) {
+                                Text(String(progress))
+                            }
+                            .padding(.vertical)
+                            .tint(.appBlue)
+                        }
+                        .padding(.zero)
+                    },
+                    label: { Text("") }
+                )
+                .tint(.white)
+                .padding(.all)
+            }
+
+    }
+
+    func getHeader() -> some View {
+        HStack {
+            Button {
+
+            } label: {
+                ConvexImageButton(buttonImageName: Constants.arrowLeftImageName, systemImage: true)
+            }
+            .padding(.leading)
+            Spacer()
+            Text(Constants.climateText)
+                .font(.custom(Constants.verdanaFont, size: 20))
+                .bold()
+                .foregroundStyle(.white)
+            Spacer()
+            Button {
+
+            } label: {
+                ConvexImageButton(buttonImageName: Constants.settingsImageName)
+            }
+            .padding(.trailing)
+        }
     }
 }
 
-struct NeumorphismUnselected: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .shadow(color: Color("lightShadow"), radius: 5, x: -5, y: -5)
-            .shadow(color: Color("darkShadow"), radius: 5, x: 5, y: 5)
-    }
-}
-
-struct NeumorphismSelected: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .shadow(color: Color("lightShadow"), radius: 5, x: 5, y: 5)
-            .shadow(color: Color("darkShadow"), radius: 5, x: -5, y: -5)
-    }
-}
-
-struct NeumorphismUnselectedCircle: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .padding(.all, 10)
-            .background(Circle().fill(.background))
-            .shadow(color: Color("lightShadow"), radius: 5, x: 5, y: 5)
-            .shadow(color: Color("darkShadow"), radius: 5, x: -5, y: -5)
-    }
-}
-
-extension View {
-    func neumorphismUnselectedStyle() -> some View {
-        modifier(NeumorphismUnselected())
-    }
-
-    func neumorphismSelectedStyle() -> some View {
-        modifier(NeumorphismSelected())
-    }
-
-    func neumorphismSelectedCircleStyle() -> some View {
-        modifier(NeumorphismUnselectedCircle())
-    }
-}
