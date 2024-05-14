@@ -57,6 +57,7 @@ struct ClimateView: View {
                     content: {
                         HStack {
                             Text("Ac")
+                                .frame(width: 40)
                                 .foregroundStyle(.gray)
                             ConvexImageButton(buttonImageName: Constants.acImage, withShadows: false)
                             Slider(value: Binding(
@@ -67,15 +68,16 @@ struct ClimateView: View {
                             ), in: 0...15, step: 1) {
                                 Text(String(progress))
                             }
-                            .padding(.vertical)
+                            .padding(.horizontal)
                             .tint(.appBlue)
                             .onAppear {
                                 UISlider.appearance().setThumbImage(UIImage(named: "sliderIcon"), for: .normal)
                             }
                         }
-                        .padding(.zero)
+                        .frame(height: 70)
                         HStack {
                             Text("Fan")
+                                .frame(width: 40)
                                 .foregroundStyle(.gray)
                             ConvexImageButton(buttonImageName: Constants.fanImage, withShadows: false)
                             Slider(value: Binding(
@@ -86,14 +88,15 @@ struct ClimateView: View {
                             ), in: 0...15, step: 1) {
                                 Text(String(progress))
                             }
-                            .padding(.vertical)
+                            .padding(.horizontal)
                             .tint(.appBlue)
                         }
-                        .padding(.zero)
+                        .frame(height: 70)
                         HStack {
                             Text("Heat")
+                                .frame(width: 40)
                                 .foregroundStyle(.gray)
-                            ConvexImageButton(buttonImageName: Constants.acImage, withShadows: false)
+                            ConvexImageButton(buttonImageName: Constants.heatImage, withShadows: false)
                             Slider(value: Binding(
                                 get: { Double(self.progress) },
                                 set: { newValue in
@@ -102,12 +105,13 @@ struct ClimateView: View {
                             ), in: 0...15, step: 1) {
                                 Text(String(progress))
                             }
-                            .padding(.vertical)
+                            .padding(.horizontal)
                             .tint(.appBlue)
                         }
-                        .padding(.zero)
+                        .frame(height: 70)
                         HStack {
                             Text("Auto")
+                                .frame(width: 40)
                                 .foregroundStyle(.gray)
                             ConvexImageButton(buttonImageName: Constants.autoImage, withShadows: false)
                             Slider(value: Binding(
@@ -118,10 +122,10 @@ struct ClimateView: View {
                             ), in: 0...15, step: 1) {
                                 Text(String(progress))
                             }
-                            .padding(.vertical)
+                            .padding(.horizontal)
                             .tint(.appBlue)
                         }
-                        .padding(.zero)
+                        .frame(height: 70)
                     },
                     label: { Text("") }
                 )
