@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct CircularProgressView: View {
-    var colorsColdProgress: [Color] = [.appBlue, .appMint]
-    var colorsHotProgress: [Color] = [.orange, .red]
+    @State private var colorsColdProgress: [Color] = [.appBlue, .appMint]
+    @State private var colorsHotProgress: [Color] = [.orange, .red]
     @Binding var progress: Int
+    @Binding var color: Color
 
     var body: some View {
         ZStack {
@@ -24,7 +25,11 @@ struct CircularProgressView: View {
             Circle()
                 .trim(from: 0, to: Double(progress) * 100 / 15 / 100)
                 .stroke(style: StrokeStyle(lineWidth: 25, lineCap: .round))
-                .fill(LinearGradient(colors: progress > 20 ? colorsHotProgress : colorsColdProgress, startPoint: .top, endPoint: .bottom))
+                .fill(LinearGradient(
+                    colors: progress > 10 ? colorsHotProgress : [color],
+                    startPoint: .top,
+                    endPoint: .bottom)
+                )
                 .frame(width: 200, height: 200)
                 .rotationEffect(.degrees(-90))
                 .neumorphismLightStyle()

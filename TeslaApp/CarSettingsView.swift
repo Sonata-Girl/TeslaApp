@@ -18,8 +18,9 @@ struct CarSettingsView: View {
         static let carImageName = "myCar"
     }
 
-    @State var isCarClose = false
-    @State var tagSelected = 0
+    @State private var isCarClose = false
+    @State private var tagSelected = 0
+    @State private var showClimateScreen = false
 
     var body: some View {
         LinearGradient(colors: [.appBlack, .black, .appBlack, .appBlack], startPoint: .top, endPoint: .bottom)
@@ -41,13 +42,13 @@ struct CarSettingsView: View {
                             .foregroundStyle(.gray)
                             .font(.custom(Constants.verdanaFont, size: 18))
                             .transition(.scale)
-
+                        
                     }
                 }
             }
             .overlay(alignment: .topTrailing) {
                 Button {
-
+                    
                 } label: {
                     ConvexImageButton(buttonImageName: Constants.contactImageName)
                 }
@@ -58,7 +59,7 @@ struct CarSettingsView: View {
                     Image(Constants.carImageName)
                         .neumorphismWhiteShadowStyle()
                     createControlPanelView()
-
+                    
                 }
             }
     }
@@ -69,6 +70,11 @@ struct CarSettingsView: View {
                 Button {
                     withAnimation {
                         tagSelected = index
+                        if tagSelected == 2 {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                showClimateScreen.toggle()
+                            }
+                        }
                     }
                 } label: {
                     ConvexImageButton(buttonImageName: "control\(index)",
@@ -77,6 +83,7 @@ struct CarSettingsView: View {
                     )
                     .frame(width: 50, height: 50)
                 }
+                .fullScreenCover(isPresented: $showClimateScreen, content: ClimateView.init)
             }
         }
         .padding()

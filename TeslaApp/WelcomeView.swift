@@ -22,11 +22,16 @@ struct WelcomeView: View {
     }
 
     var body: some View {
-        LinearGradient(colors: [.appBlack, .black, .appBlack], startPoint: .top, endPoint: .bottom)
+        LinearGradient(
+            colors: isUnlock ? [.appBlack] : [.appBlack, .black, .appBlack],
+            startPoint: .top, endPoint: .bottom
+        )
             .ignoresSafeArea()
             .overlay(alignment: .topTrailing) {
                 Button {
-
+                    withAnimation {
+                        showSettingsScreen.toggle()
+                    }
                 } label: {
                     ConvexImageButton(buttonImageName: Constants.settingsIconImageName)
                         .padding(.top, 50)
@@ -66,11 +71,18 @@ struct WelcomeView: View {
             .overlay(alignment: .bottom) {
                 RoundedRectangle(cornerRadius: 50)
                     .frame(width: 178,height: 77)
-                    .foregroundStyle(LinearGradient(colors: [.black, .appBlack.opacity(0.2), .gray.opacity(0.1)], startPoint: .topLeading, endPoint: .bottom))
+                    .foregroundStyle(LinearGradient(
+                        colors: [.black, .appBlack.opacity(0.2), .gray.opacity(0.1)],
+                        startPoint: .topLeading,
+                        endPoint: .bottom)
+                    )
                     .overlay(alignment: .trailing) {
                         Button {
                             withAnimation(.easeIn(duration: 1)) {
                                 isUnlock.toggle()
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                    showSettingsScreen.toggle()
+                                }
                             }
                         } label: {
                             if isUnlock {
@@ -79,6 +91,7 @@ struct WelcomeView: View {
                                 ConvexImageButton(buttonImageName: Constants.lockImageName)
                             }
                         }
+                        .fullScreenCover(isPresented: $showSettingsScreen, content: CarSettingsView.init)
                     }
                     .overlay(alignment: .leading) {
                         if isUnlock {
@@ -103,5 +116,6 @@ struct WelcomeView: View {
     }
 
     @State private var isUnlock = false
+    @State private var showSettingsScreen = false
 
 }
