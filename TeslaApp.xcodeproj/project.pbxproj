@@ -22,6 +22,9 @@
 		673EB1CA2BF40C050030B294 /* ClimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673EB1C92BF40C050030B294 /* ClimateView.swift */; };
 		673EB1CC2BF4EEB90030B294 /* ControlBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673EB1CB2BF4EEB90030B294 /* ControlBlockView.swift */; };
 		673EB1CE2BF505FA0030B294 /* OnOffButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673EB1CD2BF505FA0030B294 /* OnOffButton.swift */; };
+		673EB1D02BF609F20030B294 /* ConvexImageBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673EB1CF2BF609F20030B294 /* ConvexImageBlueButton.swift */; };
+		673EB1D22BF61BFD0030B294 /* BottomClimateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673EB1D12BF61BFD0030B294 /* BottomClimateView.swift */; };
+		673EB1D42BF6508B0030B294 /* NavigationLinkCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 673EB1D32BF6508B0030B294 /* NavigationLinkCustom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +44,9 @@
 		673EB1C92BF40C050030B294 /* ClimateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateView.swift; sourceTree = "<group>"; };
 		673EB1CB2BF4EEB90030B294 /* ControlBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlBlockView.swift; sourceTree = "<group>"; };
 		673EB1CD2BF505FA0030B294 /* OnOffButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnOffButton.swift; sourceTree = "<group>"; };
+		673EB1CF2BF609F20030B294 /* ConvexImageBlueButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvexImageBlueButton.swift; sourceTree = "<group>"; };
+		673EB1D12BF61BFD0030B294 /* BottomClimateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomClimateView.swift; sourceTree = "<group>"; };
+		673EB1D32BF6508B0030B294 /* NavigationLinkCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkCustom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,7 @@
 				673EB1A92BF2A6F10030B294 /* TeslaAppApp.swift */,
 				673EB1AB2BF2A6F10030B294 /* ContentView.swift */,
 				673EB1BA2BF396180030B294 /* ConvexButton.swift */,
+				673EB1CF2BF609F20030B294 /* ConvexImageBlueButton.swift */,
 				673EB1BE2BF3A0980030B294 /* Helpers */,
 				673EB1BC2BF3A06D0030B294 /* WelcomeView.swift */,
 				673EB1C32BF3D2F10030B294 /* TeslaLogoView.swift */,
@@ -83,6 +90,7 @@
 				673EB1C72BF3E9790030B294 /* CircularProgressView.swift */,
 				673EB1C92BF40C050030B294 /* ClimateView.swift */,
 				673EB1CB2BF4EEB90030B294 /* ControlBlockView.swift */,
+				673EB1D12BF61BFD0030B294 /* BottomClimateView.swift */,
 				673EB1CD2BF505FA0030B294 /* OnOffButton.swift */,
 				673EB1AD2BF2A6F30030B294 /* Assets.xcassets */,
 				673EB1B82BF2B3E40030B294 /* Colors.xcassets */,
@@ -104,6 +112,7 @@
 			children = (
 				673EB1BF2BF3A0AD0030B294 /* View+Extension.swift */,
 				673EB1C12BF3CD850030B294 /* TeslaLogo.swift */,
+				673EB1D32BF6508B0030B294 /* NavigationLinkCustom.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -180,11 +189,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				673EB1CE2BF505FA0030B294 /* OnOffButton.swift in Sources */,
+				673EB1D22BF61BFD0030B294 /* BottomClimateView.swift in Sources */,
 				673EB1AC2BF2A6F10030B294 /* ContentView.swift in Sources */,
+				673EB1D02BF609F20030B294 /* ConvexImageBlueButton.swift in Sources */,
 				673EB1CC2BF4EEB90030B294 /* ControlBlockView.swift in Sources */,
 				673EB1C42BF3D2F10030B294 /* TeslaLogoView.swift in Sources */,
 				673EB1CA2BF40C050030B294 /* ClimateView.swift in Sources */,
 				673EB1C62BF3E2680030B294 /* CarSettingsView.swift in Sources */,
+				673EB1D42BF6508B0030B294 /* NavigationLinkCustom.swift in Sources */,
 				673EB1AA2BF2A6F10030B294 /* TeslaAppApp.swift in Sources */,
 				673EB1C22BF3CD850030B294 /* TeslaLogo.swift in Sources */,
 				673EB1C02BF3A0AD0030B294 /* View+Extension.swift in Sources */,

@@ -14,7 +14,7 @@ struct OnOffButton: View {
         Image("power")
             .padding(.all, 20)
             .frame(width: 60, height: 60)
-            .tint(isSelected ? .gray : .white)
+            .foregroundStyle(isSelected ? .gray : .white)
             .background(
                 ZStack {
                     if isSelected {

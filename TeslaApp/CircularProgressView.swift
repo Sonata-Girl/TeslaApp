@@ -12,6 +12,7 @@ struct CircularProgressView: View {
     @State private var colorsHotProgress: [Color] = [.orange, .red]
     @Binding var progress: Int
     @Binding var color: Color
+    @Binding var isClimateOn: Bool
 
     var body: some View {
         ZStack {
@@ -33,10 +34,12 @@ struct CircularProgressView: View {
                 .frame(width: 200, height: 200)
                 .rotationEffect(.degrees(-90))
                 .neumorphismLightStyle()
-            Text("\(progress + 15)°C")
-                .font(.custom("Verdana", size: 25))
-                .foregroundStyle(.white)
-                .bold()
+            if isClimateOn {
+                Text("\(progress + 15)°C")
+                    .font(.custom("Verdana", size: 25))
+                    .foregroundStyle(.white)
+                    .bold()
+            }
         }
         .neumorphismVeryLightBigShadow()
     }

@@ -1,13 +1,13 @@
 //
-//  ConvexButton.swift
+//  ConvexBlueButton.swift
 //  TeslaApp
 //
-//  Created by Sonata Girl on 14.05.2024.
+//  Created by Sonata Girl on 16.05.2024.
 //
 
 import SwiftUI
 
-struct ConvexImageButton: View {
+struct ConvexImageBlueButton: View {
     var buttonImageName: String
     var withShadows = true
     var isSelected = false
@@ -29,17 +29,18 @@ struct ConvexImageButton: View {
             .background(
                 ZStack {
                     Circle()
-                        .fill(LinearGradient(colors: [.gray.opacity(0.25), .black.opacity(0.45)], startPoint: .topLeading, endPoint: .bottomTrailing))
-                        .padding(2)
-                        .blur(radius: 4)
+                        .stroke(style: StrokeStyle(lineWidth: 2))
+                        .fill(LinearGradient(colors: [.black.opacity(0.9), .gray], startPoint: .top, endPoint: .bottomTrailing))
                     if isSelected {
                         Circle()
-                            .stroke(gradient, lineWidth: 2)
-                            .opacity(isSelected ? 1 : 0)
+                            .fill(LinearGradient(colors: [.blue, .appDarkBlue], startPoint: .topLeading, endPoint: .bottomTrailing))
+                            .padding(2)
+                            .blur(radius: 4)
                     } else {
                         Circle()
-                            .stroke(style: StrokeStyle(lineWidth: 2))
-                            .fill(LinearGradient(colors: [.black.opacity(0.9), .gray], startPoint: .top, endPoint: .bottomTrailing))
+                            .fill(LinearGradient(colors: [.gray.opacity(0.25), .black.opacity(0.45)], startPoint: .topLeading, endPoint: .bottomTrailing))
+                            .padding(2)
+                            .blur(radius: 4)
                     }
                 })
             .clipShape(.circle)
@@ -48,12 +49,14 @@ struct ConvexImageButton: View {
 
     var body: some View {
         ZStack {
+
             if withShadows {
                 convexButton
-                .neumorphismUnselectedStyle()
+                    .neumorphismUnselectedStyle()
             } else {
                 convexButton
             }
         }
     }
+
 }
