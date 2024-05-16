@@ -61,7 +61,7 @@ extension View {
 struct NeumorphismLightStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .shadow(color: .white.opacity(0.6), radius: 3)
+            .shadow(color: .white.opacity(0.6), radius: 2)
     }
 }
 
