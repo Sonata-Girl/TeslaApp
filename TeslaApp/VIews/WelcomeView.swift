@@ -91,7 +91,7 @@ struct WelcomeView: View {
                                 ConvexImageButton(buttonImageName: Constants.lockImageName)
                             }
                         }
-                        .fullScreenCover(isPresented: $showSettingsScreen, content: CarSettingsView.init)
+                        .fullScreenCover(isPresented: $showSettingsScreen, content: MainTabBar.init)
                     }
                     .overlay(alignment: .leading) {
                         if isUnlock {

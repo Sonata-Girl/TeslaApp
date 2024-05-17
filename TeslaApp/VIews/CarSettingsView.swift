@@ -18,10 +18,6 @@ struct CarSettingsView: View {
         static let carImageName = "myCar"
     }
 
-    @State private var isCarClose = false
-    @State private var tagSelected = 0
-    @State private var showClimateScreen = false
-
     var body: some View {
         LinearGradient(colors: [.appBlack, .black, .appBlack, .appBlack], startPoint: .top, endPoint: .bottom)
             .ignoresSafeArea()
@@ -90,5 +86,10 @@ struct CarSettingsView: View {
         .background(RoundedRectangle(cornerRadius: 50).fill(.appBlack))
         .neumorphismVeryLightUnselected()
     }
+
+    @State private var isCarClose = false
+    @State private var tagSelected = 0
+    @State private var showClimateScreen = false
+
 }
 

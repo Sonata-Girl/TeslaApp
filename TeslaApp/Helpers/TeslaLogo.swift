@@ -33,6 +33,7 @@ struct TeslaLogo: Shape {
         path.addCurve(to: CGPoint(x: 0.028*width, y: 0.15609*height), control1: CGPoint(x: 0, y: 0.09781*height), control2: CGPoint(x: 0.00813*width, y: 0.11978*height))
         path.addCurve(to: CGPoint(x: 0.5*width, y: 0.06087*height), control1: CGPoint(x: 0.19484*width, y: 0.08284*height), control2: CGPoint(x: 0.35775*width, y: 0.05975*height))
         path.closeSubpath()
+        
         return path
     }
 }

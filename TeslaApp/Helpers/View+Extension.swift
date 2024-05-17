@@ -23,7 +23,11 @@ extension View {
     var gradient: LinearGradient {
         LinearGradient(colors: [.appMint, .appBlue], startPoint: .bottom, endPoint: .top)
     }
-    
+
+    var gradientBlack: LinearGradient {
+        LinearGradient(colors: [.appBlack, .appBlue], startPoint: .bottom, endPoint: .top)
+    }
+
     func neumorphismUnselectedStyle() -> some View {
         modifier(NeumorphismUnselected())
     }
