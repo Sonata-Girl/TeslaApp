@@ -124,6 +124,7 @@ struct ChargingView: View {
                         }
                     }
                 Spacer()
+            }
         }
     }
 
