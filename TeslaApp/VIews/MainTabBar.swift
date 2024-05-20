@@ -15,6 +15,7 @@ struct MainTabBar: View {
         CustomTabView(tableSelection: $selectionTable) {
             if selectionTable == 0 {
                 CarSettingsView()
+                
             }
             if selectionTable == 1 {
                 ChargingView()
@@ -77,6 +78,8 @@ struct CustomTabView<Content: View>: View {
         }
     }
 
+    @Namespace private var tabBarItemSpace
+    @Namespace private var tabBarItemSpaceTwo
     @State private var tabs: [TabItem] = [.init(text: "", icon: "carTabBar"),
                                           .init(text: "", icon: "electroTabBar"),
                                           .init(text: "", icon: "locationTabBar"),
@@ -89,10 +92,9 @@ struct CustomTabView<Content: View>: View {
             VStack(spacing: 5) {
                 if tableSelection == index {
                     Image(element.icon)
-                    //                Text(element.text)
+                        .foregroundStyle(.appBlue)
                 } else {
                     Image(element.icon)
-                        .tint(.appBlue)
                 }
             }
             .foregroundStyle(tableSelection == index ? gradient : gradientBlack)
@@ -105,6 +107,7 @@ struct CustomTabView<Content: View>: View {
                             .blur(radius: 4)
                             .frame(width: 50, height: 50)
                             .shadow(color: .appBlue, radius: 20, x: 0, y: 0)
+                            .matchedGeometryEffect(id: "tabBarItemSpace", in: tabBarItemSpaceTwo)
                     }
                 }
             )
