@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct CircularProgressView: View {
-    @State private var colorsColdProgress: [Color] = [.appBlue, .appMint]
-    @State private var colorsHotProgress: [Color] = [.orange, .red]
+
     @Binding var progress: Int
     @Binding var color: Color
     @Binding var isClimateOn: Bool
@@ -43,4 +42,7 @@ struct CircularProgressView: View {
         }
         .neumorphismVeryLightBigShadow()
     }
+
+    @State private var colorsColdProgress: [Color] = [.appBlue, .appMint]
+    @State private var colorsHotProgress: [Color] = [.orange, .red]
 }

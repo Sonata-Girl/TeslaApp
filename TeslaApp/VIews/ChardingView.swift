@@ -112,13 +112,11 @@ struct ChargingView: View {
                                 .bold()
                                 .padding(.leading, 30)
                             Button {
-                                withAnimation(.linear(duration: 1).delay(0.2)) {
-                                    isScreenListOpen.toggle()
-                                }
-
+//                                withAnimation(.linear(duration: 1).delay(0.2)) {
+//                                        isScreenListOpen.toggle()
+//                                }
                             } label: {
-                                ConvexButtonBlack(buttonImageName: isScreenListOpen ? Constants.arrowDownImageName : Constants.arrowUpImageName, systemImage: true)
-
+                                   ConvexButtonBlack(buttonImageName: isScreenListOpen ? Constants.arrowDownImageName : Constants.arrowUpImageName, systemImage: true)
                             }
                             .padding(.trailing, 30)
                         }

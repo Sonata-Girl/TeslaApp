@@ -40,11 +40,6 @@ struct TabItem: Identifiable, Equatable {
 struct CustomTabView<Content: View>: View {
 
     @Binding  var tableSelection: Int
-    @State private var tabs: [TabItem] = [.init(text: "", icon: "carTabBar"),
-                                          .init(text: "", icon: "electroTabBar"),
-                                          .init(text: "", icon: "locationTabBar"),
-                                          .init(text: "", icon: "profileTabBar")]
-    private var content: Content
 
     init(tableSelection: Binding<Int>, @ViewBuilder content: () -> Content) {
         self.content = content()
@@ -81,6 +76,12 @@ struct CustomTabView<Content: View>: View {
                 }
         }
     }
+
+    @State private var tabs: [TabItem] = [.init(text: "", icon: "carTabBar"),
+                                          .init(text: "", icon: "electroTabBar"),
+                                          .init(text: "", icon: "locationTabBar"),
+                                          .init(text: "", icon: "profileTabBar")]
+    private var content: Content
 
     private var tabsView: some View {
         ForEach(Array(tabs.enumerated()), id: \.offset) { index, element in

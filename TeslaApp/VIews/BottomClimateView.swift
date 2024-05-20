@@ -17,6 +17,11 @@ struct BottomClimateView: View {
         static let onButtonInfo = "Tap to turn off or swipe up\n for a fast setup"
     }
 
+    @Binding var currentBottomScreenOffset: CGFloat
+    @Binding var selectedColor: Color
+    @Binding var isClimateOn: Bool
+    @Binding var progress: Int
+
     var dragGesture: some Gesture {
         DragGesture()
             .updating($gestureOffset) { value, state, transaction in
@@ -33,11 +38,6 @@ struct BottomClimateView: View {
                 }
             }
     }
-
-    @Binding var currentBottomScreenOffset: CGFloat
-    @Binding var selectedColor: Color
-    @Binding var isClimateOn: Bool
-    @Binding var progress: Int
 
     var body: some View {
 

@@ -57,5 +57,4 @@ struct TeslaLogoView: View {
 
     @State private var isLogoShown = false
     @State private var showWelcomeScreen = false
-
 }

@@ -90,6 +90,5 @@ struct CarSettingsView: View {
     @State private var isCarClose = false
     @State private var tagSelected = 0
     @State private var showClimateScreen = false
-
 }
 
